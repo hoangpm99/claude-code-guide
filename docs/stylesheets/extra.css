@@ -1,0 +1,25 @@
+/* Penn State brand colors */
+:root {
+  --psu-nittany-navy: #001E44;
+  --psu-beaver-blue:  #1E407C;
+  --psu-pa-sky:       #009CDE;
+  --psu-pugh-blue:    #96BEE6;
+  --psu-white:        #FFFFFF;
+}
+
+/* Light mode */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color:        var(--psu-beaver-blue);
+    --md-primary-fg-color--light: var(--psu-pa-sky);
+    --md-primary-fg-color--dark:  var(--psu-nittany-navy);
+    --md-accent-fg-color:         var(--psu-pa-sky);
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] {
+    /* --md-hue: 20; */
+    --md-primary-fg-color:        var(--psu-pa-sky);
+    --md-primary-fg-color--light: var(--psu-beaver-blue);
+    --md-primary-fg-color--dark:  var(--psu-nittany-navy);
+    --md-accent-fg-color:         var(--psu-pugh-blue);
+}
