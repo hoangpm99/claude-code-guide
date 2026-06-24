@@ -1,0 +1,23 @@
+site_name: Claude Code Guide
+site_url: https://sitename.example
+theme:
+  name: material
+  palette:
+    # Dark mode — Nittany Navy background, PA Sky accents
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: custom
+      accent: custom
+
+    # Light mode — white background, Beaver Blue primary, PA Sky accents
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/extra.css
