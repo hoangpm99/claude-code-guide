@@ -2,11 +2,11 @@ site_name: Claude Code Guide
 site_url: https://sitename.example
 
 nav:
-  - Home: index.md
-  - What is Claude Code?: what-is-claude-code.md
-  - Getting Started: getting-started.md
-  - Workflow: workflow.md
-  - Requirement Engineering: requirement-engineering.md
+  - Home: 00-index.md
+  - What is Claude Code?: 01-what-is-claude-code.md
+  - Getting Started: 02-getting-started.md
+  - Workflow: 03-workflow.md
+  - Requirement Engineering: 04-requirement-engineering.md
 
 theme:
   name: material

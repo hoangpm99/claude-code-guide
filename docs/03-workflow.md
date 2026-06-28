@@ -46,6 +46,22 @@ Codify these in `CLAUDE.md` so future agents and humans follow the same rules:
 - **Commits map to build steps**, so the git history mirrors the PRD.
 - Keep a consistent convention for docstrings and comments so the codebase reads the same everywhere.
 
+## Anatomy of a good `CLAUDE.md`
+
+`CLAUDE.md` is the file every agent reads first — it's where the conventions above actually live. A good one is short and high-signal; the agent re-reads it every session, so it pays rent forever. The structure that worked for me:
+
+- **What this project does** — two or three sentences at the top so the agent orients before reading any code.
+- **Layout** — a small `tree` of the important directories with a one-line "owns X" note each. This is what stops the agent guessing where things go.
+- **Commands** — the exact, copy-pasteable commands to install, run, and test (including how to run a *single* test). Saves the agent from inventing them.
+- **Hard Constraints** — the single most valuable section. Name the invariants the agent must never cross, each with its *why*. For example:
+  > **Engine never touches the filesystem.** All disk I/O belongs in the CLI or the UI layer. This boundary must not be crossed.
+
+  These are the rules that, if broken, quietly rot the design. Stating them up front (with the reason) means the agent defends them instead of you re-explaining every time.
+- **Conventions** — spell out docstring and comment style *concretely*, with a tiny example. "Use Google-style docstrings; comment only when the *why* is non-obvious, never narrate what the code already says." Vague guidance gets ignored; a worked example gets followed.
+- **Change-logging rule** — the instruction to append every behavior-affecting change to `progress.txt` lives here too, so the agent does it without being asked.
+
+> **Lesson:** put the *why* next to every constraint. "Backend has no UI imports" gets bent the first time it's inconvenient; "Backend has no UI imports *so it stays testable without the UI installed*" survives.
+
 ## The skills I leaned on most
 
 - `/grill-me` — turn vague intent into locked decisions before coding.
