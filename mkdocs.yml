@@ -1,5 +1,13 @@
 site_name: Claude Code Guide
 site_url: https://sitename.example
+
+nav:
+  - Home: index.md
+  - What is Claude Code?: what-is-claude-code.md
+  - Getting Started: getting-started.md
+  - Workflow: workflow.md
+  - Requirement Engineering: requirement-engineering.md
+
 theme:
   name: material
   palette:
