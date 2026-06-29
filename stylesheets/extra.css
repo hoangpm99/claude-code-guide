@@ -1,0 +1,62 @@
+/* Site palette: deep steel-navy primary + aged-brass accent */
+:root {
+  --navy-deep:    #0E1C2E;  /* deepest navy — backgrounds / primary-dark */
+  --navy-steel:   #1F3A5F;  /* dark steel blue — weighty primary */
+  --navy-light:   #3E5C76;  /* lighter steel — secondary */
+
+  --brass:        #C0892E;  /* aged brass / warm amber — accent */
+  --brass-deep:   #9A6B1C;  /* darker brass — links on white (readable) */
+  --brass-bright: #E0A93F;  /* brighter brass — links/accent on dark */
+}
+
+/* Light mode — white background, steel-navy primary, brass accent */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color:        var(--navy-steel);
+    --md-primary-fg-color--light: var(--navy-light);
+    --md-primary-fg-color--dark:  var(--navy-deep);
+    --md-accent-fg-color:         var(--brass);
+
+    --md-typeset-a-color:         var(--brass-deep);
+}
+
+/* Dark mode — slate background, steel-navy primary, brighter brass accent */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color:        var(--navy-steel);
+    --md-primary-fg-color--light: var(--navy-light);
+    --md-primary-fg-color--dark:  var(--navy-deep);
+    --md-accent-fg-color:         var(--brass-bright);
+
+    --md-typeset-a-color:         var(--brass-bright);
+}
+
+/* Links always underlined so they're unmistakable, brass on hover */
+.md-typeset a {
+    text-decoration: underline;
+}
+.md-typeset a:hover,
+.md-typeset a:focus {
+    color: var(--brass);
+    text-decoration: underline;
+}
+[data-md-color-scheme="slate"] .md-typeset a:hover,
+[data-md-color-scheme="slate"] .md-typeset a:focus {
+    color: var(--brass-bright);
+}
+
+/* Don't underline nav/header/footer chrome links — only prose links */
+.md-header a,
+.md-nav a,
+.md-footer a,
+.md-typeset .headerlink {
+    text-decoration: none;
+}
+
+/* Inline code as a warm brass-tinted chip so it stands out from prose */
+.md-typeset code {
+    color: var(--brass-deep);
+    background-color: rgba(192, 137, 46, 0.12);
+}
+[data-md-color-scheme="slate"] .md-typeset code {
+    color: var(--brass-bright);
+    background-color: rgba(224, 169, 63, 0.16);
+}
