@@ -46,3 +46,16 @@ Rather than repeat it, here's what it walks you through and what you'll end up w
 That's it. With Claude Code running in the terminal, you can now just *describe what you want* in plain language — "add a login page", "fix this failing test", "explain what this file does" — and watch Claude Code read your code, make changes, and run commands for you.
 
 From here, the rest of this guide is about doing that *well*. Head to the [Workflow](03-workflow.md) page to see how I take a project from a rough idea to a shipped product.
+
+## Skills
+
+A **skill** is a reusable instruction set you can trigger with `/skill-name` (or that Claude runs automatically when relevant). It's just a folder with a `SKILL.md` file inside. They're how you teach Claude Code a repeatable procedure once instead of re-typing it every session — the whole workflow on the next page leans on them.
+
+Skills live in one of two places:
+
+- `~/.claude/skills/` (or `C:\Users\<YOUR_USERNAME>\.claude\skills` for Windows) — available in **every** project.
+- `.claude/skills/` — only in **this** project (commit it to share with your team).
+
+To add one, drop its folder in either location and Claude Code picks it up automatically. The [Workflow](03-workflow.md#setup-install-the-skills) page shows how to install a ready-made set.
+
+➡️ Official reference: **[Extend Claude with skills](https://code.claude.com/docs/en/skills)**.

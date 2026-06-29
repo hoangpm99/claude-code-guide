@@ -36,7 +36,7 @@ uv run mkdocs gh-deploy  # build and push to the gh-pages branch
 ## Architecture & conventions
 
 - **`mkdocs.yml`** is the site config. Note it has **no `nav:` key**, so MkDocs auto-generates navigation from the files in `docs/`. Adding a `.md` file under `docs/` makes it appear in the nav automatically; ordering/titles follow MkDocs defaults unless a `nav:` block is added.
-- **Theming uses Penn State brand colors.** The palette is set to `custom` for both light (`default`) and dark (`slate`) schemes in `mkdocs.yml`, and the actual color values live in `docs/stylesheets/extra.css` (CSS variables like `--psu-beaver-blue`). To change colors, edit that CSS file rather than `mkdocs.yml`.
+- **Theming: deep steel-navy primary + aged-brass accent.** The palette is set to `custom` for both light (`default`) and dark (`slate`) schemes in `mkdocs.yml`, and the actual color values live in `docs/stylesheets/extra.css` (CSS variables like `--navy-steel` and `--brass`). Prose links are underlined and use the brass accent. To change colors, edit that CSS file rather than `mkdocs.yml`.
 - **Images** go in `docs/images/` and are referenced from the Markdown pages.
 
 ## Deployment

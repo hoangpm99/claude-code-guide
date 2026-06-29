@@ -2,6 +2,21 @@
 
 Here's an example workflow that worked well for me on a past project — from a rough idea all the way to a shipped product.
 
+## Setup: install the skills
+
+Most skills below (`/grill-me`, `/to-issues`, `/to-prd`, `/tdd`) come from [Matt Pocock's skills repo](https://github.com/mattpocock/skills). (New to skills? See [Skills](02-getting-started.md#skills) in Getting Started first.)
+
+**Option A — installer.** `cd` into your project and run `npx skills@latest add mattpocock/skills` (no clone needed). It lists every skill; select the ones you want, pick **Claude Code**, keep `/setup-matt-pocock-skills` checked, then run `/setup-matt-pocock-skills` once to configure them.
+
+**Option B — copy the folders (simpler if you only want a few).** I've collected the skills I use in my own repo, [hoangpm99/claude-skills](https://github.com/hoangpm99/claude-skills). Clone or download it, then copy the skill folders you want into your skills folder:
+
+- `~/.claude/skills/` — available in every project.
+- `.claude/skills/` — just this project.
+
+Each skill is one folder with a `SKILL.md` inside; Claude Code picks it up automatically.
+
+For details, see the [repo](https://github.com/mattpocock/skills) and [this video](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=3627s).
+
 ## 1. Draft a rough PRD (/kickstart-ai-project)
 
 - Run `/kickstart-ai-project` and follow it with a prompt describing your project — the more detail, the better.
@@ -61,14 +76,6 @@ Codify these in `CLAUDE.md` so future agents and humans follow the same rules:
 - **Change-logging rule** — the instruction to append every behavior-affecting change to `progress.txt` lives here too, so the agent does it without being asked.
 
 > **Lesson:** put the *why* next to every constraint. "Backend has no UI imports" gets bent the first time it's inconvenient; "Backend has no UI imports *so it stays testable without the UI installed*" survives.
-
-## The skills I leaned on most
-
-- `/grill-me` — turn vague intent into locked decisions before coding.
-- `/to-issues` — turn the PRD into vertical-slice GitHub issues.
-- `/loop` — when iterating on prompts against tests.
-- `/review` and `/security-review` — before merging each PR.
-- Sub-agents (Explore, Plan) — for cross-file research instead of polluting the main context.
 
 ## The three rules that made this work
 
